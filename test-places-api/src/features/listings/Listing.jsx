@@ -1,12 +1,14 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import Container from "../../components/Container";
 import { useUser } from "../../contexts/UserContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export default function Listing() {
   const { user } = useUser();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!user) {
@@ -15,132 +17,105 @@ export default function Listing() {
   }, [user, navigate]);
 
   const handleUpgrade = async () => {
-    const res = await axios.post(
-      "http://localhost:3000/create-checkout-session",
-      { email: user.email }
-    );
+    try {
+      setLoading(true);
+      const res = await axios.post(
+        "http://localhost:3000/create-checkout-session",
+        { email: user.email }
+      );
 
-    const { url } = res.data;
-    window.location.href = url;
+      const { url } = res.data;
+      window.location.href = url;
+    } catch (err) {
+      if (err instanceof AxiosError) {
+        toast.error(err.response.data.error);
+      } else {
+        toast.error("Somethign went wrong!");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <Container>
-      <h2
-        style={{
-          textAlign: "center",
-          fontWeight: "600",
-          fontSize: "34px",
-          letterSpacing: "0.4px",
-          marginBottom: "20px",
-          style: "#999",
-        }}
-      >
+      <h2 className="listing-heading">
         🎉 Your business is now live on Swipe Savvy!
       </h2>
-      <p style={{ textAlign: "center", marginBottom: "23px" }}>
+      <p className="listing-heading-subtext">
         Make the most of the limited-time upgrade - first month free + 50% off
         for free trade
       </p>
-      <div className="listing-container">
-        <button className="freeAccountActiveButton">Free Plan Active</button>
-        <button className="upgradeOfferButton">Upgrade offer</button>
-      </div>
 
       <div style={{ marginBottom: "35px" }}>
-        <div
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzeXCLFA8vwycsXT0G4sW70rZRgOc14i0ya3fjYVpUBLe2IvSe05iHzgDsma8JGziiTJHcfDfdiYwqy6hZ6bXfS1qMvPaHfbuB4cQFUHpciAL6lhcO8b8x7WizjJ2jfNPoxkMAIJV0KXOTX91SlksoPUIpHKxSrwRcqiPr7wExPWBNfXhvDzY5nO82XpCKE9SwciZmC1TaUTINkvgoAm7hB2oMsOEbNXJO9ECZAaLZPGG9FCY1Ds3TWOwZrFFgM-0ZGWl8xEaaqvM')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "blur(0px)",
-            height: "300px",
-            width: "100%",
-            zIndex: 0,
-            borderRadius: "20px",
-            position: "relative",
-            marginBottom: "30px",
-          }}
-        >
+        <div className="free-plan-background-image">
           <div className="banner-details">
-            <p
+            <p className="plan-heading">Free plan active</p>
+            <ul
               style={{
-                color: "white",
-                fontWeight: "bold",
-                fontSize: "32px",
-                marginBottom: "12px",
+                display: "flex",
+                flexDirection: "column",
+                listStyle: "none",
+                gap: "12px",
               }}
             >
-              Featured placement in our app
-            </p>
-            <p style={{ color: "white" }}>Run 2x rewards promotions</p>
-          </div>
-          <div
-            style={{
-              position: "absolute",
-              bottom: "20px",
-              right: "20px",
-            }}
-          >
-            <button className="syncListingsButton">
-              Sync your listings social media
-            </button>
+              <li className="plan-details">✅ You’re listed on Swipe Savvy</li>
+              <li className="plan-details">❌ Limited visibility</li>
+              <li className="plan-details">❌ No featured placement</li>
+              <li className="plan-details">
+                ❌ No analytics or performance tracking
+              </li>
+              <li className="plan-details">
+                ❌ No analytics or performance tracking. Manual sync — listings
+                not synced to Google/Yelp/etc.
+              </li>
+            </ul>
           </div>
         </div>
-        <div
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwLlS17kwEKuR4qpSg2NaVrBVun1y8u86pmRkTGece5qLO9-JBLyqU2NKL_UwMZEvg35fhvgutlUkpxLeBNFNq_Ahby31l-5o-gKVysVPqtapu17EZceM_ojAOjMAfyNn-Ya5ii9V1h2_hN4nuL4PxEeaCdAQZzZiEZIDxMHdpzlyIETEntY7eT_9t6I-DYudcb88LiUAyZmEC5yavIKyNVOic2gFQelBYhGyEMcmsxT9IsMna0VOS7tJpquVhqnMa3n6EgynuThs')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "blur(0px)",
-            height: "300px",
-            width: "100%",
-            zIndex: 0,
-            borderRadius: "20px",
-            position: "relative",
-            marginBottom: "30px",
-          }}
-        >
+        <div className="pro-plan-image">
           <div className="banner-details">
-            <p
+            <p className="plan-heading">
+              Shop Savvy Upgrade — First Month <br /> Free + 50% Off for Life
+            </p>
+            <ul
               style={{
-                color: "white",
-                fontWeight: "bold",
-                fontSize: "32px",
-                marginBottom: "12px",
+                display: "flex",
+                flexDirection: "column",
+                listStyle: "none",
+                gap: "12px",
               }}
             >
-              Access analytics and performance <br /> reports
-            </p>
-            <p style={{ color: "white" }}>
-              Try it free for 30 days - then just $34.50/mo (50% off forever)
-            </p>
+              <li className="plan-details">✅ Featured placement in our app</li>
+              <li className="plan-details">✅ Run 2x rewards promotions</li>
+              <li className="plan-details">
+                ✅ Sync your listing across Google, Yelp, Facebook & more
+              </li>
+              <li className="plan-details">
+                ✅ Access analytics and performance reports
+              </li>
+            </ul>
           </div>
-          <div style={{ position: "absolute", bottom: "20px", right: "20px" }}>
-            <button className="syncListingsButton" onClick={handleUpgrade}>
-              🔥 Yes upgrade me - Risk free
+          <div className="plan-details-container">
+            <button
+              className="syncListingsButton"
+              onClick={handleUpgrade}
+              disabled={loading}
+            >
+              {!loading
+                ? "🔥 Yes upgrade me - Risk free"
+                : "Getting you ready..."}
             </button>
           </div>
         </div>
       </div>
-      <div style={{ marginBottom: "24px" }}>
-        <p style={{ fontWeight: "bold", textAlign: "center" }}>
+      <div className="no-thanks-box">
+        <p className="no-thanks-text">
           ➡️ No Thanks, I’ll Stay on the free plan
         </p>
       </div>
 
       <div>
-        <p
-          style={{
-            fontWeight: "bold",
-            fontSize: "26px",
-            marginBottom: "20px",
-          }}
-        >
-          Client testimonials
-        </p>
+        <p className="listing-client-heading">Client testimonials</p>
         <div className="listing-client-testimonials">
           <div className="listing-testimonial-box">
             <div>
@@ -154,14 +129,14 @@ export default function Listing() {
               />
             </div>
             <div>
-              <p style={{ marginBottom: "10px" }}>
+              <p className="owner-text">
                 <strong>
                   "Swipe Savvy has been a game-changer for my business. The
                   analytics are incredibly insightful, and the ability to run
                   promotions has significantly boosted my customer engagement."
                 </strong>
               </p>
-              <p style={{ color: "#666" }}>
+              <p className="owner-details">
                 - Sarah, Owner of The Cozy Corner Cafe
               </p>
             </div>
@@ -178,14 +153,14 @@ export default function Listing() {
               />
             </div>
             <div>
-              <p style={{ marginBottom: "10px" }}>
+              <p className="owner-text">
                 <strong>
                   "I love how easy it is to manage my business listing on Swipe
                   Savvy. The platform is user-friendly, and the support team is
                   always there to help. Highly recommend!"
                 </strong>
               </p>
-              <p style={{ color: "#666" }}>
+              <p className="owner-details">
                 - Michael, Manager at The Urban Style Salon
               </p>
             </div>
@@ -202,14 +177,14 @@ export default function Listing() {
               />
             </div>
             <div>
-              <p style={{ marginBottom: "10px" }}>
+              <p className="owner-text">
                 <strong>
                   "Thanks to Swipe Savvy, my business has seen a noticeable
                   increase in foot traffic. The featured placement in the app
                   has definitely helped attract new customers."
                 </strong>
               </p>
-              <p style={{ color: "#666" }}>
+              <p className="owner-details">
                 - Emily, Proprietor of The Green Leaf Boutique
               </p>
             </div>

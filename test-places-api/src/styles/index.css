@@ -35,48 +35,6 @@ body {
   background-color: #ddd;
 }
 
-.upgradeOfferButton {
-  font-size: 16px;
-  font-weight: 600;
-  padding: 10px 50px;
-  border-radius: 100px;
-  border: none;
-  background-color: #51a2ff;
-  cursor: pointer;
-}
-
-.upgradeOfferButton:hover {
-  background-color: #2b7fff;
-}
-
-.freeAccountActiveButton {
-  font-size: 16px;
-  font-weight: 600;
-  padding: 10px 50px;
-  border-radius: 100px;
-  border: none;
-  background-color: #e2e8f0;
-  cursor: pointer;
-}
-
-.freeAccountActiveButton:hover {
-  background-color: #cad5e2;
-}
-
-.syncListingsButton {
-  font-size: 16px;
-  font-weight: 600;
-  padding: 10px 50px;
-  border-radius: 100px;
-  border: none;
-  background-color: #e2e8f0;
-  cursor: pointer;
-}
-
-.syncListingsButton:hover {
-  background-color: #cad5e2;
-}
-
 /* verify account form */
 
 .displayChosenCompanyContainer {

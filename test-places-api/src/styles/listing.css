@@ -1,9 +1,81 @@
+.listing-heading {
+  text-align: center;
+  font-weight: 600;
+  font-size: 34px;
+  letter-spacing: 0.4px;
+  margin-bottom: 20px;
+}
+
+.listing-heading-subtext {
+  text-align: center;
+  margin-bottom: 23px;
+}
+
+.free-plan-background-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzeXCLFA8vwycsXT0G4sW70rZRgOc14i0ya3fjYVpUBLe2IvSe05iHzgDsma8JGziiTJHcfDfdiYwqy6hZ6bXfS1qMvPaHfbuB4cQFUHpciAL6lhcO8b8x7WizjJ2jfNPoxkMAIJV0KXOTX91SlksoPUIpHKxSrwRcqiPr7wExPWBNfXhvDzY5nO82XpCKE9SwciZmC1TaUTINkvgoAm7hB2oMsOEbNXJO9ECZAaLZPGG9FCY1Ds3TWOwZrFFgM-0ZGWl8xEaaqvM");
+  background-size: cover;
+  background-position: center;
+  filter: blur(0px);
+  height: 300px;
+  width: 100%;
+  z-index: 0;
+  border-radius: 20px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.plan-heading {
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.plan-details {
+  color: white;
+}
+
+.plan-details-container {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+}
+
+.pro-plan-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwLlS17kwEKuR4qpSg2NaVrBVun1y8u86pmRkTGece5qLO9-JBLyqU2NKL_UwMZEvg35fhvgutlUkpxLeBNFNq_Ahby31l-5o-gKVysVPqtapu17EZceM_ojAOjMAfyNn-Ya5ii9V1h2_hN4nuL4PxEeaCdAQZzZiEZIDxMHdpzlyIETEntY7eT_9t6I-DYudcb88LiUAyZmEC5yavIKyNVOic2gFQelBYhGyEMcmsxT9IsMna0VOS7tJpquVhqnMa3n6EgynuThs");
+  background-size: cover;
+  background-position: center;
+  filter: blur(0px);
+  height: 300px;
+  width: 100%;
+  z-index: 0;
+  border-radius: 20px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
 .listing-container {
   display: flex;
   justify-content: center;
-
   gap: 12px;
   margin-bottom: 40px;
+}
+
+.no-thanks-box {
+  margin-bottom: 24px;
+}
+
+.no-thanks-text {
+  font-weight: bold;
+  text-align: center;
+}
+
+.listing-client-heading {
+  font-weight: bold;
+  font-size: 26px;
+  margin-bottom: 20px;
 }
 
 .listing-client-testimonials {
@@ -12,8 +84,58 @@
   gap: 30px;
 }
 
+.owner-text {
+  margin-bottom: 10px;
+}
+
+.owner-details {
+  color: #666;
+}
+
 .banner-details {
   position: absolute;
-  bottom: 20px;
+  top: 20px;
   left: 20px;
+}
+
+.syncListingsButton {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 46px;
+  border-radius: 100px;
+  border: none;
+  background-color: #e2e8f0;
+  cursor: pointer;
+}
+
+.syncListingsButton:hover {
+  background-color: #cad5e2;
+}
+
+.upgradeOfferButton {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 50px;
+  border-radius: 100px;
+  border: none;
+  background-color: #51a2ff;
+  cursor: pointer;
+}
+
+.upgradeOfferButton:hover {
+  background-color: #2b7fff;
+}
+
+.freeAccountActiveButton {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 50px;
+  border-radius: 100px;
+  border: none;
+  background-color: #e2e8f0;
+  cursor: pointer;
+}
+
+.freeAccountActiveButton:hover {
+  background-color: #cad5e2;
 }

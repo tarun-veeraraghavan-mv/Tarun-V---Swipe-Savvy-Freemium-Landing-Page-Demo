@@ -3,6 +3,9 @@ const cors = require("cors");
 const axios = require("axios");
 const data = require("./lib/constants");
 const bcrypt = require("bcryptjs");
+const dotenv = require("dotenv");
+dotenv.config();
+
 const stripe = require("stripe")(`${process.env.STRIPE_TEST_SECRET_KEY}`);
 const {
   sendWelcomeEmail,
