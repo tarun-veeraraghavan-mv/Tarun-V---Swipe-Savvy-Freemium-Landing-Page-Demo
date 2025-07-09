@@ -1,0 +1,213 @@
+/* STYLES FOR VERIFY YOUR BUSINESS COMPONENT */
+
+.verify-business-heading {
+  text-align: center;
+  font-weight: 600;
+  font-size: 34px;
+  letter-spacing: 0.4px;
+  margin-bottom: 24px;
+}
+
+.verify-business-subheading {
+  font-size: 18px;
+  color: #555;
+  font-weight: 450;
+  margin-bottom: 27px;
+}
+
+.verify-business-image {
+  width: 100%;
+}
+
+.verify-business-company-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.verify-business-company-details {
+  font-size: 17px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.verify-bussiness-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.this-is-me-button {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 50px;
+  border-radius: 8px;
+  border: none;
+  background-color: #dff2fe;
+  cursor: pointer;
+}
+
+.this-is-me-button:hover {
+  background-color: #b8e6fe;
+}
+
+.this-is-not-me-button {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 50px;
+  border-radius: 8px;
+  border: none;
+  background-color: #e2e8f0;
+  cursor: pointer;
+}
+
+.this-is-not-me-button:hover {
+  background-color: #cad5e2;
+}
+
+/* STYLES FOR ACCOUNT CREATION COMPONENT */
+.account-creation-heading {
+  font-weight: 600;
+  font-size: 34px;
+  letter-spacing: 0.4px;
+  margin-bottom: 32px;
+}
+
+.verify-account-form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.input-container {
+  margin-bottom: 26px;
+}
+
+.input-label-text {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  font-size: 15px;
+  padding: 10px 10px;
+  border: 2px solid #eee;
+  outline: none;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.input-error-text {
+  color: #fb2c36;
+}
+
+.account-creation-options-container {
+  margin-bottom: 35px;
+}
+
+.account-creation-input-container {
+  margin-bottom: 12px;
+}
+
+.account-creation-submit-button {
+  width: 250px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #51a2ff;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.account-creation-submit-button:hover {
+  background-color: #2b7fff;
+}
+
+/* STYLES FOR VETIFY TERMS AND CONDITIONS COMPONENT */
+
+.terms-and-conditions-heading {
+  text-align: center;
+  font-weight: 600;
+  font-size: 34px;
+  letter-spacing: 0.4px;
+  margin-bottom: 22px;
+}
+
+.terms-and-conditions-subtext {
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.terms-and-conditions-accordian-box {
+  padding: 15px 20px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.terms-and-conditions-accordian-open-button {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.terms-and-conditions-accordian-text {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.terms-and-conditions-agreement-form {
+  margin-bottom: 22px;
+}
+
+.terms-and-conditions-agreement-form-label {
+  margin-left: 12px;
+}
+
+.error-text {
+  color: #fb2c36;
+  margin-bottom: 12px;
+}
+
+.activate-my-account-button {
+  width: 300px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #51a2ff;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.activate-my-account-button:hover {
+  background-color: #2b7fff;
+}
+
+.terms-and-conditions-notification {
+  color: #888;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.terms-and-conditions-free-benefits-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.terms-and-conditions-free-benefits-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.terms-and-conditions-free-benefits-list-item {
+  display: flex;
+  gap: 12px;
+}

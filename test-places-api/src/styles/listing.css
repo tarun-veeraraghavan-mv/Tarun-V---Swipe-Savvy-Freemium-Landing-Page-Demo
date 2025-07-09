@@ -1,0 +1,19 @@
+.listing-container {
+  display: flex;
+  justify-content: center;
+
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.listing-client-testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.banner-details {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}

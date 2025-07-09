@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.activateMyAccountButton {
+  width: 300px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #51a2ff;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.activateMyAccountButton:hover {
+  background-color: #2b7fff;
+}
+
+.searchListItem {
+  padding: 8px;
+  cursor: pointer;
+  z-index: 200;
+  border-radius: 100px;
+}
+
+.searchListItem:hover {
+  background-color: #ddd;
+}
+
+.upgradeOfferButton {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 50px;
+  border-radius: 100px;
+  border: none;
+  background-color: #51a2ff;
+  cursor: pointer;
+}
+
+.upgradeOfferButton:hover {
+  background-color: #2b7fff;
+}
+
+.freeAccountActiveButton {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 50px;
+  border-radius: 100px;
+  border: none;
+  background-color: #e2e8f0;
+  cursor: pointer;
+}
+
+.freeAccountActiveButton:hover {
+  background-color: #cad5e2;
+}
+
+.syncListingsButton {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 50px;
+  border-radius: 100px;
+  border: none;
+  background-color: #e2e8f0;
+  cursor: pointer;
+}
+
+.syncListingsButton:hover {
+  background-color: #cad5e2;
+}
+
+/* verify account form */
+
+.displayChosenCompanyContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 26px;
+}
+
+@media (max-width: 620px) {
+  .displayChosenCompanyContainer {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}

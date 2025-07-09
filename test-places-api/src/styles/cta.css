@@ -1,0 +1,203 @@
+/* Universal Box Sizing - Highly Recommended */
+* {
+  box-sizing: border-box;
+}
+
+/* CTA */
+.hero-page-container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 32px; /* This padding might be too much on small screens */
+}
+
+/* Base styles for the hero background image */
+.hero-page-cta-background-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(https://lh3.googleusercontent.com/aida-public/AB6AXuDVWKD4Dfbrc5nQgWv5RBnuU5JxozG1Je8EVL-IalLffnjy8AohKPi8bPLRiXZ4dAV-gm7YG5jVj3Tcsg2k94mYkbfri18qGjkqHZPkHp2w_7eGPKNpMknG18uxV4jBei0MEC6tWocTvFOlHjnk2HzhdpfEnF3Xys4UeIgTh2HOc30ezdJO4pu0b1GYeCJ6Mi76iskt4zHapgf0sJ0MSJmds1JV12IKFYc29pezxSmNMMzLa5kngkf7HY35axncbddc6Z60HnSodBI);
+  background-size: cover;
+  background-position: center;
+  height: 500px; /* Consider making this height responsive or use min-height */
+  width: 100%;
+  z-index: 0;
+  border-radius: 20px;
+  position: relative;
+  margin-bottom: 37px;
+  overflow: hidden; /* Prevent child absolute elements from overflowing parent if they exceed its bounds */
+}
+
+/* Adjust logo for smaller screens */
+.swipe-savvy-logo {
+  height: 50px;
+  width: 120px;
+  position: absolute;
+  top: 3%;
+  left: 1%;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.hero-page-cta-text-box,
+.hero-page-input-box {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.hero-page-cta-text-box {
+  top: 15%;
+}
+
+.hero-page-input-box {
+  top: 55%;
+}
+
+.hero-page-cta-text-heading {
+  font-size: 46px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero-page-cta-text {
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-page-input {
+  padding: 12px 24px;
+  width: 100%;
+  max-width: 500px;
+  outline: none;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.hero-search-results-box {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.search-list-item {
+  padding: 8px;
+  cursor: pointer;
+  z-index: 200;
+  border-radius: 100px;
+}
+
+.search-list-item:hover {
+  background-color: #aaa;
+  color: #fff;
+}
+
+.cta-text {
+  color: #777;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.homepageClientTestomonialsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.client-testimonial-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.client-testimonials-heading {
+  font-weight: bold;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.client-testimonial-image {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.client-qoute {
+}
+
+.client-name {
+  color: #666;
+  margin-top: 20px;
+}
+
+@media (max-width: 800px) {
+  .hero-page-input-box {
+    top: 65%;
+    width: 300px;
+    translate: -32%;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-page-container {
+    padding: 30px 15px;
+  }
+
+  .hero-page-cta-background-image {
+    height: 450px;
+  }
+
+  .hero-page-cta-text-box {
+    top: 10%;
+  }
+
+  .hero-page-cta-text-heading {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .hero-page-cta-text {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .hero-page-input,
+  .hero-search-results-box {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  .homepageClientTestomonialsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-page-input-box {
+    width: 120px;
+    translate: -50%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-page-container {
+    padding: 40px 25px;
+  }
+
+  .hero-page-cta-text-heading {
+    font-size: 38px;
+  }
+
+  .homepageClientTestomonialsContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
