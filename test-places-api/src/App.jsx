@@ -1,13 +1,14 @@
-import VerificationProcessProtector from "./components/wrappers/VerificationProcessProtector";
-import Verify from "./features/verification/Verify";
-import { SelectedBusinessProvider } from "./contexts/SelectBusinessContext";
-import SimplePlacesSearch from "./SimplePlacesSearch";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Listing from "./features/listings/Listing";
 import { Toaster } from "react-hot-toast";
-import ProSubscriptionListing from "./features/listings/ProSubscriptionListing";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ListingPageProtector from "./components/wrappers/ListingPageProtector";
+import VerificationProcessProtector from "./components/wrappers/VerificationProcessProtector";
+import { SelectedBusinessProvider } from "./contexts/SelectBusinessContext";
 import { UserProvider } from "./contexts/UserContext";
+import SimplePlacesSearch from "./features/home/SimplePlacesSearch";
+import Listing from "./features/listings/Listing";
+import Payment from "./features/payment/PaymentSuccessful";
+import Verify from "./features/verification/Verify";
+import PaymentCancelled from "./features/payment/PaymentCancelled";
 
 function App() {
   return (
@@ -45,14 +46,8 @@ function App() {
               <Route path="/listing" element={<Listing />} />
             </Route>
 
-            <Route
-              path="/success/:sessionId"
-              element={<ProSubscriptionListing />}
-            />
-            <Route
-              path="/cancel"
-              element={<p>Successfully cancelled subscription</p>}
-            />
+            <Route path="/success/:sessionId" element={<Payment />} />
+            <Route path="/cancel" element={<PaymentCancelled />} />
           </Routes>
         </BrowserRouter>
       </SelectedBusinessProvider>

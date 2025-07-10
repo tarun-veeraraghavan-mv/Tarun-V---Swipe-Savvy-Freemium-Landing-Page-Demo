@@ -8,7 +8,11 @@ import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import { termsAndConditionsText } from "../../../constants/terms-and-conditions";
 
-export default function VerifyTermsAndConditions({ user, setProgress }) {
+export default function VerifyTermsAndConditions({
+  user,
+  setUser,
+  setProgress,
+}) {
   const [openTermsAndConditions, setOpenTermsAndConditions] = useState(false);
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit, formState } = useForm();
@@ -21,6 +25,7 @@ export default function VerifyTermsAndConditions({ user, setProgress }) {
 
       const res = await axios.post("http://localhost:3000/create-user", user);
       console.log(res);
+      setUser(res.data);
 
       toast.success("Account successfully created!");
 

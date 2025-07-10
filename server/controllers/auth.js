@@ -42,6 +42,7 @@ exports.registerUser = async (req, res) => {
         phone,
         receiveSms,
         website: website || "Not provided",
+        plan: "free",
       },
     });
 

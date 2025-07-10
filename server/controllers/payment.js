@@ -106,9 +106,18 @@ exports.verifyPayment = async (req, res) => {
       updatedUser.name
     );
 
-    res.json({ status: "success", userPlan: "pro" });
+    const filteredResponseUser = {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      phone: user.phone,
+      website: user.website,
+      plan: user.plan,
+    };
+
+    res.status(200).json(filteredResponseUser);
   } catch (err) {
     console.error("Stripe verify error:", err.message);
-    res.status(500).json({ error: err.message });
+    res.status(400).json({ error: err.message });
   }
 };

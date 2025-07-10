@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelectedBusiness } from "../../contexts/SelectBusinessContext";
 import { useNavigate } from "react-router-dom";
-import VerifyBusiness from "./VerifyBusiness";
+import VerifyBusiness from "./verifyBusiness/VerifyBusiness";
 import VerifyAccountCreation from "./VerifyAccountCreation";
 import VerifyTermsAndConditions from "./VerifyTermsAndConditions";
 import Container from "../../components/Container";
@@ -56,6 +56,7 @@ export default function Verify() {
           setReadTermsAndConditionsChecked={setReadTermsAndConditionsChecked}
           setProgress={setProgress}
           user={user}
+          setUser={setUser}
         />
       )}
     </Container>
