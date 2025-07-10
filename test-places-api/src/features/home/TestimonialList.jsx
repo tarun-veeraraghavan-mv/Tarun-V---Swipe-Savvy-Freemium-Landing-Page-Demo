@@ -36,7 +36,7 @@ export default function TestimonialList() {
 
       <div className="homepageClientTestomonialsContainer">
         {testimonialList.map((t) => (
-          <TestimonialsListItem t={t} />
+          <TestimonialsListItem t={t} key={t.id} />
         ))}
       </div>
     </div>

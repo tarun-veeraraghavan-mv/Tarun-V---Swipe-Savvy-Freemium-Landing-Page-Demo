@@ -3,7 +3,7 @@ import { useSelectedBusiness } from "../../contexts/SelectBusinessContext";
 import { useNavigate } from "react-router-dom";
 import VerifyBusiness from "./verifyBusiness/VerifyBusiness";
 import VerifyAccountCreation from "./VerifyAccountCreation";
-import VerifyTermsAndConditions from "./VerifyTermsAndConditions";
+import VerifyTermsAndConditions from "./verifyTermsAndConditions/VerifyTermsAndConditions";
 import Container from "../../components/Container";
 import { useUser } from "../../contexts/UserContext";
 
