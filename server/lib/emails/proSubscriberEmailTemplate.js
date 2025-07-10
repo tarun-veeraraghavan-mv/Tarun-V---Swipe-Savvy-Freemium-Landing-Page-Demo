@@ -1,7 +1,14 @@
+// These are the primary templates to notify user when
+// they switch over to PRO plan
+
+// This is used to customize the subject of the email
+// It takes in the name of the user and returns the subject in string format
 exports.proSubscriberSubjectTemplate = (name) => {
   return `🚀 You're a PRO, ${name}! Swipe Savvy Just Got Supercharged`;
 };
 
+// This is used to customize the main body of the email
+// It takes in the name of the user and returns the body in string format
 exports.proSubscriberEmailTemplate = (name) => {
   return `
     Hi ${name},\n

@@ -1,7 +1,14 @@
+// These are the primary templates to notify user when
+// they first sign up
+
+// This is used to customize the subject of the email
+// It takes in the name of the user and returns the subject in string format
 exports.welcomeEmailSubjectTemplate = (name) => {
   return `🎉 You're In ${name}! Your Swipe Savvy Listing is Live — Here’s What’s Next`;
 };
 
+// This is used to customize the main body of the email
+// It takes in the name of the user and returns the body in string format
 exports.welcomeEmailTemplate = (name) => {
   return `
 Hi ${name},\n

@@ -1,8 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// This is the Prisma schema file,
+// The models used in the app can be configured here
 
 generator client {
   provider = "prisma-client-js"
@@ -25,8 +22,8 @@ model User {
   plan String @default("free")
   stripeCustomerId String?   @unique
   stripeSubId     String?    @unique
-  trialEndsAt     DateTime?  // Stripe trial end timestamp
-  upgradedAt      DateTime?  // When upgrade happened
+  trialEndsAt     DateTime?  
+  upgradedAt      DateTime?  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   sentEmails SentEmail[]
@@ -48,12 +45,12 @@ model Payments {
   id            Int       @id @default(autoincrement())
   user          User      @relation(fields: [userId], references: [id])
   userId        Int
-  sessionId     String    @unique // cs_...
-  subscriptionId String?  // sub_...
-  customerId    String?   // cus_...
-  amount        Int       // in cents (Stripe format)
+  sessionId     String    @unique 
+  subscriptionId String?  
+  customerId    String?   
+  amount        Int      
   currency      String
-  status        String    // e.g. "paid", "unpaid", "trialing"
+  status        String    
   trialEndsAt   DateTime?
   createdAt     DateTime  @default(now())
 }
