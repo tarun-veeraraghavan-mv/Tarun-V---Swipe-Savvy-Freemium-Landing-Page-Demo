@@ -24,7 +24,7 @@ export function useGooglePlacesApi(query) {
       return;
     }
 
-    // Set a debounce timeout of 400ms
+    // Set a debounce timeout of 300ms
     const handler = setTimeout(() => {
       const fetchSearchPlaces = async () => {
         try {
@@ -49,7 +49,7 @@ export function useGooglePlacesApi(query) {
       };
 
       fetchSearchPlaces();
-    }, 400); // wait 300ms after last keystroke
+    }, 300); // wait 300ms after last keystroke
 
     // Cleanup function clears the timeout if query changes before 300ms
     return () => clearTimeout(handler);
