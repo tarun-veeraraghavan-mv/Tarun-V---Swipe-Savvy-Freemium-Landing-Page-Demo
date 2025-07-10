@@ -17,7 +17,7 @@
     url(https://lh3.googleusercontent.com/aida-public/AB6AXuDVWKD4Dfbrc5nQgWv5RBnuU5JxozG1Je8EVL-IalLffnjy8AohKPi8bPLRiXZ4dAV-gm7YG5jVj3Tcsg2k94mYkbfri18qGjkqHZPkHp2w_7eGPKNpMknG18uxV4jBei0MEC6tWocTvFOlHjnk2HzhdpfEnF3Xys4UeIgTh2HOc30ezdJO4pu0b1GYeCJ6Mi76iskt4zHapgf0sJ0MSJmds1JV12IKFYc29pezxSmNMMzLa5kngkf7HY35axncbddc6Z60HnSodBI);
   background-size: cover;
   background-position: center;
-  height: 500px; /* Consider making this height responsive or use min-height */
+  height: 500px;
   width: 100%;
   z-index: 0;
   border-radius: 20px;
@@ -139,6 +139,17 @@
 .client-name {
   color: #666;
   margin-top: 20px;
+}
+
+.searchListItem {
+  padding: 8px;
+  cursor: pointer;
+  z-index: 200;
+  border-radius: 100px;
+}
+
+.searchListItem:hover {
+  background-color: #ddd;
 }
 
 @media (max-width: 800px) {

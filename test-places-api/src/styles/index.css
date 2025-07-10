@@ -24,19 +24,6 @@ body {
   background-color: #2b7fff;
 }
 
-.searchListItem {
-  padding: 8px;
-  cursor: pointer;
-  z-index: 200;
-  border-radius: 100px;
-}
-
-.searchListItem:hover {
-  background-color: #ddd;
-}
-
-/* verify account form */
-
 .displayChosenCompanyContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;

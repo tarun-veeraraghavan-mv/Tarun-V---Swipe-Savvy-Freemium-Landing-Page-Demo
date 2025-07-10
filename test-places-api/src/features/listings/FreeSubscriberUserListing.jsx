@@ -1,3 +1,16 @@
+// COMPONENT: Listing
+
+// DESCRIPTION:
+// Main route-based component shown at `/listing`.
+// It determines which listing UI to show based on the user's subscription plan.
+
+// CONTEXT:
+// - useUser(): Accesses the currently authenticated user and their plan.
+
+// BEHAVIOR:
+// - If user has a "free" plan, renders <FreeSubscriberUserListing />
+// - If user is a Pro subscriber, renders <ProSubscriberUserListing /> (not shown here)
+
 import React, { useEffect, useState } from "react";
 import { useUser } from "../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";

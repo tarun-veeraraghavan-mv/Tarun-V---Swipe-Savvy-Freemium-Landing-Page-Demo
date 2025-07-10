@@ -1,3 +1,22 @@
+// COMPONENT: VerifyAccountCreation
+
+// DESCRIPTION:
+// This is Step 2 of the verification flow where the user creates a Swipe Savvy account.
+// It collects and validates user details using `react-hook-form` and updates user context state.
+// On successful submission, it progresses the verification flow to Step 3.
+
+// PROPS:
+// - setProgress (function): Callback to advance the verification step (moves to Step 3)
+// - setUser (function): Sets the new user object into global state (likely context)
+
+// BEHAVIOR:
+// - Uses `useForm()` from react-hook-form for form state and validation
+// - Fields include: full name, email, phone number, password, confirm password, and optional website
+// - Validates email, phone number, and password strength
+// - Confirms password matches
+// - Includes checkboxes for SMS opt-in and ownership verification
+// - If all validations pass, saves user data (excluding confirmPassword) and moves to the next step
+
 import { useForm } from "react-hook-form";
 
 export default function VerifyAccountCreation({ setProgress, setUser }) {

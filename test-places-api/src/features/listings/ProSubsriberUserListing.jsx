@@ -1,3 +1,17 @@
+// COMPONENT: ProSubscriberUserListing
+
+// DESCRIPTION:
+// Displays the listing page UI for users who have upgraded to the Shop Savvy Pro plan.
+// Highlights the benefits and confirms their upgraded status.
+
+// BEHAVIOR:
+// - Shows a heading and subtext celebrating the upgrade
+// - Lists the key features available in the Pro plan
+// - Styled container with plan details and visual layout
+
+// USAGE:
+// Rendered conditionally by <Listing /> component when user.plan !== "free"
+
 import Container from "../../components/Container";
 
 export default function ProSubsriberUserListing() {
