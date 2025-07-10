@@ -4,7 +4,7 @@ A modern React + Node.js full-stack MVP to onboard local businesses via Google P
 
 ---
 
-
+https://github.com/user-attachments/assets/b6873084-c6d1-4d01-a313-fc3751d19291
 
 ---
 
