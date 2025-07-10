@@ -1,3 +1,14 @@
+// COMPONENT: TestimonialList
+
+// Displays a list of hardcoded client testimonials on the homepage.
+// Each testimonial includes: A client image, A quote about
+//  the product, The name and role of the business owner
+
+// COMPONENTS:
+// - <TestimonialsListItem />: Renders individual testimonial cards
+
+// Data is currently hardcoded but can later be moved to a CMS or API.
+
 import TestimonialsListItem from "./TestimonialsListItem";
 
 const testimonialList = [
