@@ -12,15 +12,15 @@ const {
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "tarunv1911@gmail.com",
-    pass: "lkqw vslr rewq gdyy",
+    user: `${process.env.SWIPE_SAVVY_COMPANY_EMAIL}`,
+    pass: `${process.env.GMAIL_APP_PASSWORD}`,
   },
 });
 
 exports.sendWelcomeEmail = async (userId, to, name) => {
   try {
     const mailOptions = {
-      from: "tarunv1911@gmail.com",
+      from: `${process.env.SWIPE_SAVVY_COMPANY_EMAIL}`,
       to,
       subject: welcomeEmailSubjectTemplate(name),
       text: welcomeEmailTemplate(name),

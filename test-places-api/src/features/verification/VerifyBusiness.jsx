@@ -5,6 +5,8 @@ export default function VerifyBusiness({ setProgress }) {
   const { selectedBusiness, setSelectedBusiness } = useSelectedBusiness();
   const navigate = useNavigate();
 
+  console.log(selectedBusiness);
+
   return (
     <div>
       <div>
@@ -17,7 +19,11 @@ export default function VerifyBusiness({ setProgress }) {
       <div className="displayChosenCompanyContainer">
         <div>
           <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR6q9Pod7mDvR_dmZvRCh6OaQn1_uEjS-c2ZD1vQ8MVZXxmTgmyf7zFetF1Bb7UbTIH3g0pk_GZXnNzF0kWym1dWe5Iod3ig3Mg5ZFjsJbIk9ne585xrL0RXm0XLCvy8gEvJngG4KbgskmmGILztKq_thNsKmXnjP9U3Of_aXcBjBw9qg7RSt99CSLSuhm3Jz3vXuf3RahdG8dMO4N2sOKHxNCmuBfDMLzaPl0a2HZ_L-bOX56iJ7F2NWkeduPhb3Xs5iHuMrnEwk"
+            src={
+              selectedBusiness.photos[0].photo_reference
+                ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${selectedBusiness.photos[0].photo_reference}&key=AIzaSyBQ3RH7SbmPFpee6g2yext-zL45YtGv9Fo`
+                : "No images available for this shop"
+            }
             alt="Image of your shop"
             className="verify-business-image"
           />
@@ -27,12 +33,33 @@ export default function VerifyBusiness({ setProgress }) {
             {selectedBusiness.name}
           </p>
           <p className="verify-business-company-details">
-            {selectedBusiness.formatted_address}
+            {selectedBusiness.formatted_address || "Address not available"}
           </p>
-          <p className="verify-business-company-details">
-            {selectedBusiness.user_ratings_total} user views (
-            {selectedBusiness.rating})
-          </p>
+          <div className="verify-business-company-details">
+            {selectedBusiness.user_ratings_total && selectedBusiness.rating ? (
+              <p>
+                <strong>{selectedBusiness.user_ratings_total}</strong> user
+                views (<strong>{selectedBusiness.rating}</strong> ⭐️)
+              </p>
+            ) : (
+              "No ratings details could be found"
+            )}
+          </div>
+          <div className="verify-business-company-details">
+            {selectedBusiness.geometry.location.lat &&
+            selectedBusiness.geometry.location.lng ? (
+              <p>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${selectedBusiness.geometry.location.lat},${selectedBusiness.geometry.location.lng}`}
+                  target="_blank"
+                >
+                  View on google maps &rarr;
+                </a>
+              </p>
+            ) : (
+              "Could not display this shop on Google Maps"
+            )}
+          </div>
         </div>
       </div>
       <div className="verify-bussiness-button-container">

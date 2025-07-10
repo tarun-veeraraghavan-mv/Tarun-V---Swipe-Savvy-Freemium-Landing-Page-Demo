@@ -1,8 +1,8 @@
-export const welcomeEmailSubjectTemplate = (name) => {
+exports.welcomeEmailSubjectTemplate = (name) => {
   return `🎉 You're In ${name}! Your Swipe Savvy Listing is Live — Here’s What’s Next`;
 };
 
-export const welcomeEmailTemplate = (name) => {
+exports.welcomeEmailTemplate = (name) => {
   return `
 Hi ${name},\n
 Welcome to Swipe Savvy — your business is now officially listed in our Loyalty Rewards Network!\n

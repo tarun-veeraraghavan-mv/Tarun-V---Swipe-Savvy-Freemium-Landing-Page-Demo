@@ -1,8 +1,8 @@
-export const proSubscriberSubjectTemplate = (name) => {
+exports.proSubscriberSubjectTemplate = (name) => {
   return `🚀 You're a PRO, ${name}! Swipe Savvy Just Got Supercharged`;
 };
 
-export const proSubscriberEmailTemplate = (name) => {
+exports.proSubscriberEmailTemplate = (name) => {
   return `
     Hi ${name},\n
     Welcome to the Swipe Savvy PRO plan — where growth isn’t optional, it’s inevitable.\n

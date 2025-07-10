@@ -23,7 +23,6 @@
   border-radius: 20px;
   position: relative;
   margin-bottom: 37px;
-  overflow: hidden; /* Prevent child absolute elements from overflowing parent if they exceed its bounds */
 }
 
 /* Adjust logo for smaller screens */
@@ -78,6 +77,7 @@
   border: 1px solid #eee;
   border-radius: 10px;
   font-size: 16px;
+  z-index: 10000;
 }
 
 .hero-search-results-box {
@@ -89,6 +89,9 @@
   width: 100%;
   margin: 0 auto;
   list-style: none;
+  z-index: 10000;
+  max-height: 300px;
+  overflow-y: scroll;
 }
 
 .search-list-item {
@@ -144,8 +147,6 @@
 @media (max-width: 800px) {
   .hero-page-input-box {
     top: 65%;
-    width: 300px;
-    translate: -32%;
   }
 }
 
@@ -183,8 +184,7 @@
   }
 
   .hero-page-input-box {
-    width: 120px;
-    translate: -50%;
+    width: 300px;
   }
 }
 

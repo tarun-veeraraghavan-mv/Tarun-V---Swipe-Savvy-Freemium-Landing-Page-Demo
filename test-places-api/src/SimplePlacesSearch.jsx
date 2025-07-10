@@ -1,16 +1,13 @@
-import axios, { AxiosError } from "axios";
+import { AxiosError } from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelectedBusiness } from "./contexts/SelectBusinessContext";
+import { useGooglePlacesApi } from "./hooks/useGooglePlacesApi";
 
 const BACKEND_URL = "http://localhost:3000";
 
 export default function SimplePlacesSearch() {
   const [input, setInput] = useState("");
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
   const { selectedBusiness, setSelectedBusiness } = useSelectedBusiness();
   const navigate = useNavigate();
 
@@ -21,39 +18,7 @@ export default function SimplePlacesSearch() {
     }
   }, [selectedBusiness, navigate]);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        setLoading(true);
-
-        const data = await axios.get(`${BACKEND_URL}/test-companies`);
-
-        console.log(data.data);
-        setData(data.data);
-      } catch (err) {
-        if (err instanceof AxiosError) {
-          setError(err.response.data.error);
-        } else {
-          setError("Something went wrong!");
-        }
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchData();
-  }, []);
-
-  const filteredCompanies = input
-    ? data.filter((c) => c.name.toLowerCase().includes(input.toLowerCase()))
-    : [];
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    alert(error.message);
-  }
+  const { places: data } = useGooglePlacesApi(input);
 
   return (
     <div className="hero-page-container">
@@ -80,22 +45,16 @@ export default function SimplePlacesSearch() {
           <div>
             <input
               type="text"
-              placeholder="🔍 Enter your business name or phone number"
+              placeholder="🔍 Enter your business name"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              style={{
-                padding: "12px 24px",
-                width: 500,
-                outline: "none",
-                border: "1px solid #eee",
-                borderRadius: "10px",
-              }}
+              className="hero-page-input"
             />
           </div>
           <div>
-            {filteredCompanies.length > 0 && (
+            {data.length > 0 && (
               <ul className="hero-search-results-box">
-                {filteredCompanies.slice(0, 4).map((c) => (
+                {data.map((c) => (
                   <li
                     key={c.place_id}
                     onClick={() => setSelectedBusiness(c)}
@@ -160,6 +119,7 @@ export default function SimplePlacesSearch() {
               <p className="client-name">Ethan, Manager at The Gear Shop</p>
             </div>
           </div>
+
           <div className="client-testimonial-box">
             <div>
               <img
