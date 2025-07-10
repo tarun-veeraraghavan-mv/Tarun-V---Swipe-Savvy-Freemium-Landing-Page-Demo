@@ -1,4 +1,4 @@
-# 🧠 Swipe Savvy — Business Verification & Listing Flow
+# 💳 Swipe Savvy — Business Verification & Listing Flow
 
 A modern React + Node.js full-stack MVP to onboard local businesses via Google Places search, progressive verification steps, and Stripe-powered upgrade funnel. Built for speed, trust, and conversions.
 
